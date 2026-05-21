@@ -36,12 +36,16 @@ nav{
 }
 nav ul{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 100px 100px;
     list-style: none;
     max-width: 200px;
     margin: auto;
 }
 nav ul li a{
+    margin-top:5px;
+    margin-bottom:5px;
+    margin-left:10px;
+    margin-right:10px;
     color: rgb(0, 0, 70);
     text-decoration: none;
     padding: 10px;
@@ -53,8 +57,8 @@ nav ul li a{
 nav ul li a:hover{
     background-color: rgba(255, 187, 0, 0.5);
     color: rgb(255, 187, 0);
-    padding: 15px;
-    font-size: 15px;
+    padding: 13px;
+    font-size: 13px;
 }
 h2{
     border-bottom: gray 2px solid;
@@ -68,6 +72,37 @@ article{
     grid-area: ar;
     margin: 10px;
 }
+.cards{
+    padding: 10px;
+    background-color: rgb(0, 0, 40);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+.card{
+    max-width: 80%;
+    background-color: rgb(0, 0, 70);
+    padding: 10px;
+    border-radius: 10px;
+}
+.card p{
+    margin-top: 10px;
+}
+.kepcards{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 10px;
+    background-color: rgba(0, 0, 70, 0.514);
+    max-width: 80%;
+    border-radius: 10px;
+}
+.kepcard{
+    background-color: white;
+    padding: 10px;
+    color: rgb(0, 0, 40);
+}
+
 aside{
     grid-area: as;
     margin: 10px;
@@ -76,8 +111,24 @@ aside p{
     text-align: left;
 }
 img{
-    
+    max-width: 100%;
+    margin: 5px;
+    border: 1px solid gray;
+    border-radius: 10px;
 }
 footer{
     grid-area: f;
+}
+@media screen and (max-width:600px){
+    main{
+        grid-template-areas: 
+        "h h"
+        "n n"
+        "ar ar"
+        "as as"
+        "f f";
+    }
+    p{
+        font-size: calc(10px + 2vw);
+    }
 }
